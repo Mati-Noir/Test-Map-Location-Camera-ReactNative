@@ -11,10 +11,12 @@ const NewPlaceScreen = ({ navigation }) => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState();
 
+  useState [location, setLocation] = useState();
+
   const handleTitleChange = text => setTitle(text);
 
   const handleSave = () => {
-    dispatch(addPlace(title, image));
+    dispatch(addPlace(title, image, location));
     navigation.navigate("Direcciones");
   };
 
@@ -28,7 +30,7 @@ const NewPlaceScreen = ({ navigation }) => {
           onChangeText={handleTitleChange}
         />
         <ImageSelector onImage={setImage} />
-        <LocationSelector />
+        <LocationSelector onLocation={setLocation}/>
         <Button
           title="Guardar dirección"
           color={COLORS.MAROON}

@@ -4,4 +4,5 @@ export default {
   BLUSH: "#003AFF",
   Orange: "#FF8F00",
   Golden: "#F7B81B",
+  Black: "#000C37"
 };

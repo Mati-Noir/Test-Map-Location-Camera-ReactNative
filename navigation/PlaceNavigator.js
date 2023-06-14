@@ -32,7 +32,7 @@ const PlaceNavigator = () => (
         title: "Direcciones",
         headerRight: () => (
           <TouchableOpacity onPress={() => navigation.navigate("Nuevo")}>
-            <Ionicons name="md-add" color={COLORS.DARK_SIENNA} size={23} />
+            <Ionicons name="md-add" color={COLORS.Black} size={23} />
           </TouchableOpacity>
         ),
       })}
