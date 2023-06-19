@@ -6,13 +6,13 @@ const MapScreen = () => {
         <View style={styles.container}>
             <Text>Map View</Text>
         </View>
-    )
-}
+    );
+};
 
 const styles = StyleSheet.create({
     container: {
         flex: 1
-    }
-})
+    },
+});
 
-export default MapScreen
+export default MapScreen;

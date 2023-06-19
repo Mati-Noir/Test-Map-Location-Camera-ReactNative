@@ -29,7 +29,7 @@ export default (state = initialState, action) => {
               item.address, 
               item.lat, 
               item.lng
-              )
+            )
         ),
       };
     default:

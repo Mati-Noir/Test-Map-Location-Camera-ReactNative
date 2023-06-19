@@ -5,12 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadAddress } from "../store/places.actions";
 
 const PlaceListScreen = ({ navigation }) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const places = useSelector(state => state.places.places);
 
   useEffect(() => {
     dispatch(loadAddress());
-  }, [])
+  }, []);
 
   const renderItem = ({ item }) => (
     <PlaceItem
