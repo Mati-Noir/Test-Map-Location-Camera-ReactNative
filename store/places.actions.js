@@ -2,7 +2,7 @@ import * as FileSystem from "expo-file-system";
 
 export const ADD_PLACE = "ADD_PLACE";
 import { Map } from "../constants/Map";
-import { insertAddress } from "../db";
+import { insertAddress, fetchAddress } from "../db";
 export const LOAD_PLACES = "LOAD_PLACES";
 
 export const addPlace = (title, image, location) => {
@@ -10,7 +10,7 @@ export const addPlace = (title, image, location) => {
     const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${location.lat},${location.lng}&key=${Map.API_KEY}`);
 
     if(!response.ok) {
-      throw new Error("No se ha podido comunicar con Google Maps")
+      throw new Error("No se ha podido comunicar con Google Maps");
     }
 
     const resData = await response.json()
@@ -31,8 +31,14 @@ export const addPlace = (title, image, location) => {
         to: Path,
       });
       const result = await insertAddress(
-        title, image, address, location, lat, lng
-      )
+        title,
+        image,
+        address,
+        location,
+        lat,
+        lng,
+      );
+      console.log(result);
     } catch (error) {
       console.log(error.message);
       throw error;
@@ -55,7 +61,7 @@ export const loadAddress = () => {
       console.log(result)
       dispatch({ type: LOAD_PLACES, places: result.rows._array})
     } catch (error) {
-      throw error
+      throw err;
     }
   }
 }

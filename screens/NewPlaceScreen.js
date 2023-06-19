@@ -10,8 +10,7 @@ const NewPlaceScreen = ({ navigation }) => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState("");
   const [image, setImage] = useState();
-
-  useState [location, setLocation] = useState();
+  const [location, setLocation] = useState();
 
   const handleTitleChange = text => setTitle(text);
 
